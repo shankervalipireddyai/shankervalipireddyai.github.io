@@ -2,340 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="color-scheme" content="light dark" />
-  <meta name="description" content="Shanker Valipireddy — Principal Architect and AI Enablement Lead specializing in agentic AI, generative AI, forward deployment, and cloud-scale systems." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Shanker Valipireddy — Principal Architect / AI Enablement Lead specializing in applied AI, agentic AI, generative AI, and forward deployment." />
   <link rel="icon" href="data:," />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <title>Shanker Valipireddy — Applied AI & Forward Deployment</title>
+  <title>Shanker Valipireddy</title>
   <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #fbfcfb;
-      --paper: #ffffff;
-      --ink: #14221f;
-      --muted: #52635f;
-      --soft: #e7eeeb;
-      --line: #cdd8d4;
-      --accent: #08766b;
-      --accent-strong: #05584f;
-      --wash: #eef6f3;
-      --mono-bg: #edf3f1;
-      --shadow: 0 14px 38px rgba(17, 50, 43, .08);
-      --max: 820px;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f1614;
-        --paper: #141d1a;
-        --ink: #eef6f3;
-        --muted: #afbfba;
-        --soft: #24332f;
-        --line: #33453f;
-        --accent: #64c8b9;
-        --accent-strong: #8addcf;
-        --wash: #182622;
-        --mono-bg: #1b2a26;
-        --shadow: 0 16px 42px rgba(0, 0, 0, .24);
-      }
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--ink);
+      background: #fdfdfd;
+      color: #111;
       font-family: Helvetica, Arial, sans-serif;
-      font-size: 17px;
-      line-height: 1.62;
-      text-rendering: optimizeLegibility;
+      font-size: 1rem;
+      line-height: 1.5;
     }
-    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: .17em; }
-    a:hover { color: var(--accent-strong); }
-    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
-    .skip { position: fixed; left: 1rem; top: 1rem; z-index: 20; transform: translateY(-180%); background: var(--paper); padding: .6rem .8rem; border: 1px solid var(--line); }
-    .skip:focus { transform: translateY(0); }
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      background: color-mix(in srgb, var(--bg) 92%, transparent);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(10px);
-    }
-    .nav-inner {
-      width: min(var(--max), calc(100% - 2rem));
-      margin: 0 auto;
+    a { color: #2a7ae2; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrapper { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    header.site-header { border-bottom: 1px solid #e8e8e8; }
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 3.35rem;
+      padding: 14px 0;
       gap: 1rem;
     }
-    .nav-title {
-      font-family: "IBM Plex Mono", monospace;
-      color: var(--ink);
-      text-decoration: none;
-      font-size: .82rem;
-      font-weight: 500;
+    .site-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #111;
+      text-decoration: underline;
+      text-underline-offset: 4px;
       white-space: nowrap;
     }
-    .nav-links { display: flex; align-items: center; gap: 1rem; list-style: none; margin: 0; padding: 0; }
-    .nav-links a { color: var(--muted); font-size: .82rem; text-decoration: none; }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-    main {
-      width: min(var(--max), calc(100% - 2rem));
-      margin: 0 auto;
-      padding: 4.4rem 0 6rem;
-    }
-    .intro {
-      display: grid;
-      grid-template-columns: 112px minmax(0, 1fr);
-      gap: 2rem;
-      align-items: start;
-      padding-bottom: 3.2rem;
-      border-bottom: 1px solid var(--line);
-    }
-    .monogram {
-      width: 112px;
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
+    .site-title:hover { text-decoration: underline; }
+    nav.site-nav { display: flex; align-items: center; gap: 1.4rem; }
+    nav.site-nav a { color: #111; font-size: 1.05rem; }
+    nav.site-nav a:hover { color: #2a7ae2; }
+    nav.site-nav svg { width: 20px; height: 20px; fill: #828282; vertical-align: -4px; }
+    nav.site-nav a:hover svg { fill: #2a7ae2; }
+    main { padding: 2.5rem 0 4rem; }
+    .bio { overflow: hidden; }
+    .photo {
+      float: right;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      background: var(--wash);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      color: var(--accent-strong);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 2rem;
-      font-weight: 500;
-      letter-spacing: -.08em;
-    }
-    h1, h2, h3 { margin-top: 0; line-height: 1.15; }
-    h1 { margin-bottom: .35rem; font-size: clamp(2.25rem, 7vw, 3.65rem); letter-spacing: -.045em; font-weight: 700; }
-    .role { margin: 0 0 1.35rem; color: var(--accent-strong); font-family: "IBM Plex Mono", monospace; font-size: .87rem; line-height: 1.5; }
-    .intro p { margin: 0 0 1rem; }
-    .cv-line { margin-top: 1.35rem !important; font-weight: 600; }
-    .download-links { display: inline-flex; flex-wrap: wrap; gap: .8rem; margin-left: .25rem; }
-    .download-links a { font-weight: 600; }
-    section { padding: 3.8rem 0 0; }
-    .section-head {
-      display: grid;
-      grid-template-columns: 3.2rem minmax(0, 1fr);
-      gap: .85rem;
-      align-items: baseline;
-      margin-bottom: 1.75rem;
-    }
-    .section-no { font-family: "IBM Plex Mono", monospace; font-size: .75rem; color: var(--accent); }
-    h2 { margin: 0; font-size: 1.75rem; letter-spacing: -.025em; }
-    .timeline { display: grid; }
-    .role-row {
-      display: grid;
-      grid-template-columns: 9rem minmax(0, 1fr);
-      gap: 1.4rem;
-      padding: 1.45rem 0;
-      border-top: 1px solid var(--line);
-    }
-    .role-row:last-child { border-bottom: 1px solid var(--line); }
-    .date { font-family: "IBM Plex Mono", monospace; color: var(--muted); font-size: .77rem; padding-top: .22rem; }
-    .role-row h3 { font-size: 1.08rem; margin-bottom: .15rem; }
-    .company { margin: 0 0 .55rem; color: var(--accent-strong); font-weight: 600; }
-    .role-row p:last-child { margin-bottom: 0; }
-    .selected-work {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-    .work-item { background: var(--paper); padding: 1.25rem; }
-    .work-item .metric { font-family: "IBM Plex Mono", monospace; color: var(--accent); font-size: 1.15rem; font-weight: 500; }
-    .work-item h3 { margin: .5rem 0 .55rem; font-size: 1.04rem; }
-    .work-item p { margin: 0; color: var(--muted); font-size: .94rem; }
-    .list-clean { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-    .list-clean li { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
-    .item-title { font-weight: 650; color: var(--ink); }
-    .item-meta { display: block; margin-top: .18rem; color: var(--muted); font-size: .92rem; }
-    .numbered { counter-reset: item; }
-    .numbered li { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: .6rem; }
-    .numbered li::before { counter-increment: item; content: counter(item, decimal-leading-zero); font-family: "IBM Plex Mono", monospace; color: var(--accent); font-size: .73rem; padding-top: .2rem; }
-    .skills {
+      background: #eef4fb;
+      border: 1px solid #e0e0e0;
       display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-      margin-top: 1.2rem;
-    }
-    .skill {
-      border: 1px solid var(--line);
-      background: var(--mono-bg);
-      padding: .32rem .6rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: .72rem;
-      color: var(--ink);
-    }
-    details { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    summary { cursor: pointer; padding: 1rem 0; color: var(--accent-strong); font-weight: 650; }
-    details p { color: var(--muted); margin-top: 0; }
-    .contact-panel {
-      background: var(--wash);
-      border: 1px solid var(--line);
-      padding: 1.4rem 1.5rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
       align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2a7ae2;
+      margin: 0 0 1rem 2rem;
     }
-    .contact-panel p { margin: .1rem 0; }
-    .contact-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .75rem 1rem; }
-    .contact-links a { font-weight: 650; }
-    footer { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; padding: 0 0 2.5rem; color: var(--muted); font-family: "IBM Plex Mono", monospace; font-size: .7rem; }
-    @media (max-width: 720px) {
-      body { font-size: 16px; }
-      .nav-links li:nth-child(n+4) { display: none; }
-      main { padding-top: 2.8rem; }
-      .intro { grid-template-columns: 72px minmax(0, 1fr); gap: 1rem; }
-      .monogram { width: 72px; font-size: 1.35rem; }
-      h1 { font-size: clamp(2.15rem, 11vw, 3rem); }
-      .role-row { grid-template-columns: 1fr; gap: .35rem; }
-      .selected-work { grid-template-columns: 1fr; }
-      .contact-panel { grid-template-columns: 1fr; }
-      .contact-links { justify-content: flex-start; }
+    h1 { font-size: 2.4rem; font-weight: 500; margin: 0 0 1.2rem; line-height: 1.2; }
+    h2 { font-size: 1.9rem; font-weight: 500; margin: 2.6rem 0 1rem; line-height: 1.25; }
+    p { margin: 0 0 1rem; }
+    ul.tight { margin: 0 0 1rem; padding-left: 1.4rem; }
+    ul.tight li { margin-bottom: .45rem; }
+    .meta { color: #555; }
+    .cv-formats { font-size: .9rem; color: #555; }
+    footer.site-footer {
+      border-top: 1px solid #e8e8e8;
+      padding: 1.2rem 0 2rem;
+      color: #828282;
+      font-size: .875rem;
     }
-    @media (max-width: 460px) {
-      .nav-title { display: none; }
-      .nav-inner { justify-content: center; }
-      .nav-links { width: 100%; justify-content: space-between; }
-      .intro { grid-template-columns: 1fr; }
-      .monogram { width: 68px; }
-      .section-head { grid-template-columns: 2.4rem minmax(0, 1fr); }
-      .numbered li { grid-template-columns: 2.1rem minmax(0, 1fr); }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-    @media print {
-      .site-nav { display: none; }
-      body { background: #fff; color: #111; font-size: 11pt; }
-      main { padding: 0; }
-      section { break-inside: avoid; padding-top: 1.8rem; }
-      a { color: #111; }
+    @media (max-width: 600px) {
+      nav.site-nav { gap: .9rem; flex-wrap: wrap; justify-content: flex-end; }
+      nav.site-nav a { font-size: .95rem; }
+      .photo { width: 110px; height: 110px; font-size: 1.8rem; margin-left: 1.2rem; }
+      h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#content">Skip to content</a>
-  <nav class="site-nav" aria-label="Primary navigation">
-    <div class="nav-inner">
-      <a class="nav-title" href="#top">SV / Applied AI</a>
-      <ul class="nav-links">
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#patents">Patents</a></li>
-        <li><a href="#writing">Writing</a></li>
-        <li><a href="#credentials">Credentials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <header class="site-header">
+    <div class="wrapper header-inner">
+      <a class="site-title" href="#top">SV</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="#experience">Experience</a>
+        <a href="#patents">Patents</a>
+        <a href="#awards">Awards</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+        <a href="mailto:shanker.valipireddyai@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/shankervalipireddy" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+        </a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main id="content">
-    <header class="intro" id="top">
-      <div class="monogram" aria-label="Shanker Valipireddy initials">SV</div>
-      <div>
+  <main id="top">
+    <div class="wrapper">
+      <div class="bio">
+        <div class="photo" aria-label="Shanker Valipireddy initials">SV</div>
         <h1>Shanker Valipireddy</h1>
-        <p class="role">Principal Architect · Applied AI & Forward Deployment</p>
-        <p>I’m an applied AI leader with more than 20 years of experience building enterprise software, data platforms, and production AI systems. At Aflac, I lead AI enablement across 100+ engineering teams and help move agentic systems from discovery and pilot through evaluation, governance, and production rollout.</p>
+        <p>Hi there! I'm a Principal Architect / AI Enablement Lead at <a href="https://www.aflac.com" target="_blank" rel="noopener">Aflac</a>, working on AI/ML, agentic AI, and generative AI.</p>
+        <p>I'm an applied AI leader with more than 20 years of experience building enterprise software, data platforms, and production AI systems. At Aflac, I lead AI enablement across 100+ engineering teams and help move agentic systems from discovery and pilot through evaluation, governance, and production rollout.</p>
         <p>My work spans multi-agent workflows, generative AI, cloud-scale deployment, AI infrastructure, data engineering, and performance optimization. I have led teams across business and engineering, built reusable AI playbooks, and translated complex technical findings into architecture and platform decisions.</p>
         <p>Previously, I built AI/ML and data platforms at Western Digital, agentic and regulatory AI systems at Brains Technology Solutions, and anomaly-detection systems at Cisco.</p>
-        <p class="cv-line">My CV can be found <a href="cv.pdf" target="_blank" rel="noopener">here</a>.<span class="download-links"><a href="Shanker_Valipireddy_CV.docx" download>DOCX</a></span></p>
+        <p>My CV can be found <a href="cv.pdf" target="_blank" rel="noopener">here</a>. <span class="cv-formats">(<a href="Shanker_Valipireddy_CV.docx" download>DOCX</a>)</span></p>
       </div>
-    </header>
 
-    <section aria-labelledby="impact-title">
-      <div class="section-head"><span class="section-no">00</span><h2 id="impact-title">Selected impact</h2></div>
-      <div class="selected-work">
-        <article class="work-item"><div class="metric">~20,000</div><h3>Agent-driven pipeline migration</h3><p>Designed the architecture that converted pipelines across 82 business domains into Airflow DAGs and AWS Glue jobs.</p></article>
-        <article class="work-item"><div class="metric">99.3%</div><h3>Structured quality evaluation</h3><p>Combined automated generation with human review, governance, and feedback loops to reach a 99.3% QA pass rate.</p></article>
-        <article class="work-item"><div class="metric">100+</div><h3>Engineering teams enabled</h3><p>Created role-specific workshops and AI playbooks to move teams from code completion toward agentic development.</p></article>
-      </div>
-    </section>
-
-    <section id="experience" aria-labelledby="experience-title">
-      <div class="section-head"><span class="section-no">01</span><h2 id="experience-title">Work Experience</h2></div>
-      <div class="timeline">
-        <article class="role-row"><div class="date">2025 — Present</div><div><h3>Principal Architect / AI Enablement Lead</h3><p class="company">Aflac · Georgia</p><p>Leads enterprise adoption of generative and agentic AI, including AI playbooks, agent-driven modernization, structured evaluation, human-in-the-loop governance, and cloud-native migration across AWS data platforms.</p></div></article>
-        <article class="role-row"><div class="date">2023 — 2025</div><div><h3>Principal Architect — AI/ML, Agentic AI & GenAI</h3><p class="company">Brains Technology Solutions · Michigan</p><p>Designed multi-agent systems with LangGraph, CrewAI, MCP, and LangChain; developed LLM workflows, regulatory text extraction, fine-tuning, MLOps, and production-ready customer proof-of-concepts.</p></div></article>
-        <article class="role-row"><div class="date">2016 — 2023</div><div><h3>Senior Principal / Technologist — AI/ML & Big Data</h3><p class="company">Western Digital · California</p><p>Built composable AI/ML platforms, data-lakehouse components, and performance-optimized infrastructure spanning Kubernetes, GPUs, RDMA/RoCE, NVMe-oF, object storage, and zoned storage systems.</p></div></article>
-        <article class="role-row"><div class="date">2014 — 2015</div><div><h3>Principal Architect — Big Data, AI/ML & NLP</h3><p class="company">Cisco Systems · California</p><p>Built deep-learning anomaly detection over network telemetry, including vectorization, clustering, real-time device integration, operator dashboards, and human feedback loops.</p></div></article>
-        <article class="role-row"><div class="date">2010 — 2014</div><div><h3>Senior Java Developer</h3><p class="company">Franklin Templeton · California</p><p>Delivered Hadoop and HBase ETL, MapReduce analytics, Hive and Pig reporting, Oracle integration, and sentiment-analysis services.</p></div></article>
-        <article class="role-row"><div class="date">2003 — 2010</div><div><h3>Java Engineer</h3><p class="company">IBM, Wipro & CF India</p><p>Developed enterprise integration systems and proof-of-concepts using Java, Spring, and the TIBCO EAI toolset.</p></div></article>
-      </div>
-    </section>
-
-    <section id="patents" aria-labelledby="patents-title">
-      <div class="section-head"><span class="section-no">02</span><h2 id="patents-title">Patents</h2></div>
-      <ul class="list-clean">
-        <li><a class="item-title" href="https://patents.justia.com/patent/10360193" target="_blank" rel="noopener">Method and Apparatus for Smart Archiving and Analytics</a><span class="item-meta">US 10,360,193 · Issued July 23, 2019 · Western Digital · Inventors include Shanker Valipireddy</span></li>
-        <li><a class="item-title" href="https://patents.justia.com/patent/20200341943" target="_blank" rel="noopener">Intelligent Data Access Across Tiered Storage Systems</a><span class="item-meta">US 11,544,216 · Issued January 3, 2023 · Western Digital · Inventors include Shanker Valipireddy</span></li>
+      <h2 id="experience">Work Experience</h2>
+      <ul class="tight">
+        <li>Jan 2025–Present - <strong>Aflac</strong>, Principal Architect / AI Enablement Lead — AI/ML, Agentic AI, GenAI</li>
+        <li>Jan 2023–Jan 2025 - <strong>Brains Technology Solutions</strong>, Principal Architect — AI/ML, Agentic AI &amp; GenAI</li>
+        <li>Jan 2016–Jan 2023 - <strong>Western Digital</strong>, Senior Principal / Technologist — AI/ML &amp; Big Data</li>
+        <li>2014–2015 - <strong>Cisco Systems</strong>, Principal Architect — Big Data, AI/ML &amp; NLP</li>
+        <li>2010–2014 - <strong>Franklin Templeton</strong>, Senior Java Developer</li>
+        <li>2003–2010 - <strong>IBM, Wipro &amp; CF India</strong>, Java Engineer</li>
       </ul>
-    </section>
 
-    <section id="writing" aria-labelledby="writing-title">
-      <div class="section-head"><span class="section-no">03</span><h2 id="writing-title">Publications & Conference Talks</h2></div>
-      <ol class="list-clean numbered">
-        <li><div><span class="item-title">Enabling an Optimal Application Ecosystem on ZNS Storage</span><span class="item-meta">Flash Memory Summit · Santa Clara, California · August 2022</span></div></li>
-        <li><div><span class="item-title">An Artificial Intelligence Data Pipeline for Storing and Processing Ingested Data</span><span class="item-meta">Flash Memory Summit · Santa Clara, California · 2019</span></div></li>
-        <li><div><span class="item-title">Flash Storage Complementing a Data Lake for Real-time Insight</span><span class="item-meta">Flash Memory Summit · Santa Clara, California · 2018</span></div></li>
-        <li><div><span class="item-title">An Analytics System on OpenStack™ for Manufacturing</span><span class="item-meta">Western Digital corporate white paper · 2018</span></div></li>
-        <li><div><span class="item-title">An Analytics System for Optimizing Manufacturing Processes</span><span class="item-meta">Western Digital corporate white paper · 2018</span></div></li>
-        <li><div><span class="item-title">Use Cases for ActiveScale™ Data Pipeline Service</span><span class="item-meta">Western Digital corporate white paper · 2019</span></div></li>
-        <li><div><span class="item-title">ActiveScale™ Data Pipeline Service with Elasticsearch</span><span class="item-meta">Best practices for metadata indexing and search · Western Digital white paper · 2019</span></div></li>
-        <li><div><span class="item-title">AI Solution — Object Storage Content Analysis</span><span class="item-meta">Corporate presentation · Western Digital · 2018</span></div></li>
-        <li><div><span class="item-title">MLPerf / TensorFlow / PyTorch Performance Benchmark — Image Detection</span><span class="item-meta">AI/ML performance presentation · 2018</span></div></li>
-        <li><div><span class="item-title">Deep Learning with TensorFlow and Keras for Fraud Detection</span><span class="item-meta">AI/ML presentation · 2019</span></div></li>
-      </ol>
-    </section>
+      <h2 id="patents">Patents</h2>
+      <ul class="tight">
+        <li><a href="https://patents.justia.com/patent/10360193" target="_blank" rel="noopener">Method and Apparatus for Smart Archiving and Analytics</a> <span class="meta">— US 10,360,193, issued July 23, 2019</span></li>
+        <li><a href="https://patents.justia.com/patent/20200341943" target="_blank" rel="noopener">Intelligent Data Access Across Tiered Storage Systems</a> <span class="meta">— US 11,544,216, issued January 3, 2023</span></li>
+      </ul>
 
-    <section id="credentials" aria-labelledby="credentials-title">
-      <div class="section-head"><span class="section-no">04</span><h2 id="credentials-title">Certifications</h2></div>
-      <p>Selected credentials in machine learning, cloud AI, data platforms, and engineering practice.</p>
-      <div class="skills" aria-label="Highlighted certifications">
-        <span class="skill">AWS ML — Specialty</span><span class="skill">Azure AI Engineer</span><span class="skill">Generative AI with LLMs</span><span class="skill">Machine Learning Specialization</span><span class="skill">NLP Specialization</span><span class="skill">Building Conversational AI</span><span class="skill">Responsible AI</span><span class="skill">AI in the Data Center</span><span class="skill">Apache Cassandra Developer</span><span class="skill">MongoDB Developer</span><span class="skill">Spark ML</span><span class="skill">PMP Training</span>
-      </div>
-      <details>
-        <summary>View full certification list</summary>
-        <p>AWS Certified Machine Learning — Specialty; AZ-102 Microsoft Azure AI Engineer: Solution Design; Generative AI with Large Language Models; Machine Learning Specialization; Natural Language Processing Specialization; Natural Language Processing with Attention Models; NLP with Classification and Vector Spaces; Neural Networks and Deep Learning; Transformer Models and BERT; Large Language Models: Application through Production; Building Conversational AI Applications; Introduction to Responsible AI; Introduction to AI in the Data Center; Global Artificial Intelligence Bootcamp; Monitoring Kubernetes with Prometheus and Grafana; Smart Contracts — Ethereum; Spark Certificate for Scalable Machine Learning; Big Data XSeries; Apache Cassandra Certified Developer; MongoDB Certified Developer; Advanced Predictive/Data Analytics using R; and PMP Training.</p>
-      </details>
-    </section>
+      <h2 id="awards">Awards</h2>
+      <ul class="tight">
+        <li>IBM Bravo Award</li>
+        <li>Best Employee Award</li>
+      </ul>
 
-    <section aria-labelledby="awards-title">
-      <div class="section-head"><span class="section-no">05</span><h2 id="awards-title">Awards</h2></div>
-      <ul class="list-clean"><li><span class="item-title">IBM Bravo Award</span></li><li><span class="item-title">Best Employee Award</span></li></ul>
-    </section>
+      <h2 id="publications">Publications &amp; Conference Talks</h2>
+      <ul class="tight">
+        <li>Enabling an Optimal Application Ecosystem on ZNS Storage <span class="meta">— Flash Memory Summit, Santa Clara, CA, August 2022</span></li>
+        <li>An Artificial Intelligence Data Pipeline for Storing and Processing Ingested Data <span class="meta">— Flash Memory Summit, Santa Clara, CA, 2019</span></li>
+        <li>Flash Storage Complementing a Data Lake for Real-time Insight <span class="meta">— Flash Memory Summit, Santa Clara, CA, 2018</span></li>
+        <li>An Analytics System on OpenStack for Manufacturing <span class="meta">— Western Digital corporate white paper, 2018</span></li>
+        <li>An Analytics System for Optimizing Manufacturing Processes <span class="meta">— Western Digital corporate white paper, 2018</span></li>
+        <li>Use Cases for ActiveScale Data Pipeline Service <span class="meta">— Western Digital corporate white paper, 2019</span></li>
+        <li>ActiveScale Data Pipeline Service with Elasticsearch — Best Practices for Metadata Indexing and Search <span class="meta">— Western Digital corporate white paper, 2019</span></li>
+        <li>AI Solution — Object Storage Content Analysis <span class="meta">— Corporate presentation, Western Digital, 2018</span></li>
+        <li>AI/ML MLPerf / TensorFlow / PyTorch Performance Benchmark — Image Detection <span class="meta">— Corporate presentation, Western Digital, 2018</span></li>
+        <li>AI/ML Deep Learning (TensorFlow/Keras) for Analyzing Fraud Detection <span class="meta">— Presentation, 2019</span></li>
+      </ul>
 
-    <section aria-labelledby="education-title">
-      <div class="section-head"><span class="section-no">06</span><h2 id="education-title">Education</h2></div>
-      <ul class="list-clean"><li><span class="item-title">B.Tech, Computer Science and Engineering</span><span class="item-meta">January 1999 — June 2003</span></li></ul>
-    </section>
+      <h2 id="certifications">Certifications</h2>
+      <p>AWS Certified Machine Learning — Specialty; Azure AI Engineer; Generative AI with LLMs; Machine Learning, NLP, and Deep Learning specializations; Responsible AI; AI in the Data Center; Apache Cassandra and MongoDB Certified Developer; Spark ML; PMP training.</p>
 
-    <section id="contact" aria-labelledby="contact-title">
-      <div class="section-head"><span class="section-no">07</span><h2 id="contact-title">Contact</h2></div>
-      <div class="contact-panel">
-        <div><strong>Let’s talk about applied AI, agentic systems, or AI infrastructure.</strong><p>United States · Open to principal-level architecture and forward-deployment work.</p></div>
-        <div class="contact-links"><a href="mailto:shanker.valipireddyai@gmail.com">Email</a><a href="tel:+18325893878">832-589-3878</a><a href="https://www.linkedin.com/in/shankervalipireddy" target="_blank" rel="noopener">LinkedIn</a></div>
-      </div>
-    </section>
+      <h2 id="education">Education</h2>
+      <ul class="tight">
+        <li>B.Tech, Computer Science and Engineering <span class="meta">— January 1999 to June 2003</span></li>
+      </ul>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        <a href="mailto:shanker.valipireddyai@gmail.com">shanker.valipireddyai@gmail.com</a><br />
+        <a href="tel:+18325893878">832-589-3878</a><br />
+        <a href="https://www.linkedin.com/in/shankervalipireddy" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
   </main>
-  <footer>Shanker Valipireddy · Applied AI, forward deployment, and intelligent infrastructure</footer>
-  <script>
-    const sectionLinks = [...document.querySelectorAll('.nav-links a')];
-    const sections = sectionLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        sectionLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
-      });
-    }, { rootMargin: '-20% 0px -70% 0px' });
-    sections.forEach(section => observer.observe(section));
-  </script>
+
+  <footer class="site-footer">
+    <div class="wrapper">Shanker Valipireddy · Applied AI, agentic systems, and intelligent infrastructure</div>
+  </footer>
 </body>
 </html>
